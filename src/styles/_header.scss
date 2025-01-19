@@ -1,0 +1,109 @@
+@use "_variables" as *;
+
+.app-header {
+  position: absolute;
+  width: 100%;
+  top: $size-unit * 20;
+  z-index: 1;
+  &__logo {
+    color: rgb(252, 252, 252);
+    font-family: Mplus 1p;
+    font-size: $fontSize-largest;
+    font-weight: $fontWeight-boldest;
+    line-height: 1.5;
+    letter-spacing: 2px;
+  }
+  &__nav {
+    ul > *:not(:last-child) {
+      margin-right: $size-unit * 14;
+    }
+    &-item {
+      display: inline-block;
+      position: relative;
+      color: $color-text;
+      font-size: $fontSize-small;
+      font-weight: $fontWeight-bolder;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      &::after {
+        content: "";
+        display: block;
+        width: 0%;
+        border-bottom: 1px solid transparent;
+        transition:
+          width 0.2s,
+          border-color 0.3s;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%);
+      }
+      &--active,
+      &:hover {
+        &::after {
+          border-color: $color-text;
+          width: 70%;
+        }
+      }
+    }
+  }
+  a[href^="tel:"] {
+    color: $color-text;
+    font-size: $fontSize-small;
+    font-weight: $fontWeight-bolder;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: bottom;
+    img {
+      margin-right: $size-unit * 4.5;
+    }
+  }
+  &__burger-btn {
+    width: $size-unit * 7;
+    height: $size-unit * 4;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: $color-text;
+      position: absolute;
+      right: 0;
+      transition: width 0.3s;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      top: calc(50% - 1px);
+    }
+    i {
+      display: block;
+      width: 66%;
+      height: 2px;
+      background: $color-text;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transition: width 0.3s;
+    }
+    &:hover {
+      &::before {
+        width: 33%;
+      }
+      &::after {
+        width: 66%;
+      }
+      i {
+        width: 100%;
+      }
+    }
+  }
+}

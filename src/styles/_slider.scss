@@ -1,0 +1,57 @@
+@use "_variables" as *;
+
+.app-slider {
+  &__item {
+    display: flex;
+  }
+  &__img {
+    width: $size-unit * 115;
+  }
+  &__text {
+    color: $color-secondary;
+    font-size: $fontSize-smaller;
+    font-weight: $fontWeight-bolder;
+    line-height: 1.58;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    margin: 0;
+    margin-left: $size-unit * 7.5;
+    width: $size-unit * 17;
+    flex-basis: $size-unit * 17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__controls {
+    width: $size-unit * 115;
+    margin-top: $size-unit * 10;
+    display: flex;
+    justify-content: end;
+    color: $color-secondary;
+    align-items: center;
+  }
+  &__prev,
+  &__next {
+    border: none;
+    padding: 0;
+    background: none;
+    line-height: 1;
+    width: $size-unit * 6.75;
+    height: $size-unit * 6.75;
+    border-radius: 50%;
+  }
+  &__next {
+    transform: rotate(180deg);
+    margin-left: $size-unit * 4.5;
+  }
+  &__pagination {
+    font-size: $fontSize-smaller;
+    font-weight: $fontWeight-bolder;
+    line-height: 1.58;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-right: $size-unit * 8;
+  }
+}

@@ -1,0 +1,31 @@
+$color-bg: rgb(48, 18, 78);
+$color-bg-white: rgb(255, 255, 255);
+$color-text: rgb(255, 255, 255);
+$color-text-secondary: rgb(119, 108, 130);
+$color-text-light-secondary: rgb(155, 148, 163);
+$color-text-dark-secondary: rgb(48, 35, 61);
+$color-primary: rgb(246, 16, 103);
+$color-secondary: rgb(94, 35, 157);
+
+$size-unit: 4px;
+$indentationSteps: 5, 9, 15, 16, 18, 23, 32, a;
+
+$gridCount: 12;
+
+$fontSize-largest: 24px;
+$fontSize-larger: 22px;
+$fontSize-large: 18px;
+$fontSize-normal: 16px;
+$fontSize-small: 14px;
+$fontSize-smaller: 12px;
+
+$font-sansSerif: "M PLUS 1p", "Century Gothic", "Verdana", "Arial", serif !default;
+$font-condensed: "Noticia Text", "Arial Narrow", serif !default;
+
+$fontWeight-boldest: 900 !default;
+$fontWeight-bolder: 800 !default;
+$fontWeight-bold: 700 !default;
+$fontWeight-medium: 500 !default;
+$fontWeight-normal: 400 !default;
+$fontWeight-light: 300 !default;
+$fontWeight-lighter: 200 !default;

@@ -1,0 +1,46 @@
+@use "_variables" as *;
+
+.app-quote {
+  position: relative;
+  z-index: 1;
+  width: $size-unit * 115;
+  line-height: 1;
+  margin-bottom: -#{$size-unit * 50};
+  &__content {
+    width: $size-unit * 95;
+    color: $color-text;
+    font-family: $font-condensed;
+    font-style: italic;
+    font-size: $fontSize-larger;
+    font-weight: $fontWeight-normal;
+    line-height: 1.4;
+    padding: $size-unit * 38 $size-unit * 15 $size-unit * 22;
+    position: absolute;
+    left: 100%;
+    margin-left: -#{$size-unit * 33};
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      content: "";
+      height: $size-unit * 9;
+      width: $size-unit * 16;
+      background: $color-bg;
+    }
+  }
+  &__text {
+    margin: $size-unit * 11 0 $size-unit * 15;
+  }
+  &__top,
+  &__bottom {
+    display: block;
+    margin: 0 45% 0 auto;
+  }
+  &__top {
+    transform: rotate(180deg);
+  }
+  &__picture {
+    max-width: 100%;
+    margin-top: $size-unit * 9;
+  }
+}

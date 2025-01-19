@@ -1,0 +1,58 @@
+@use "_variables" as *;
+
+.app-form {
+  width: $size-unit * 140;
+  border-bottom: 3px solid rgb(244, 244, 237);
+  display: flex;
+  transition: border-color 0.3s;
+  margin: $size-unit * 11 auto $size-unit * 3;
+  &:focus-within {
+    border-color: $color-primary;
+  }
+  &__input {
+    flex-grow: 1;
+    color: $color-text-dark-secondary;
+    font-size: $fontSize-large;
+    font-weight: $fontWeight-bolder;
+    line-height: 1.42;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: $size-unit * 4 $size-unit * 4.5;
+    border: none;
+    &::placeholder {
+      color: $color-text-light-secondary;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &__btn {
+    border: none;
+    padding: $size-unit * 4 $size-unit * 7;
+    width: $size-unit * 56;
+    background: linear-gradient(180deg, rgba(242, 242, 242, 0.5), rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    color: $color-primary;
+    font-size: $fontSize-smaller;
+    font-weight: $fontWeight-bolder;
+    line-height: 1.58;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    align-items: center;
+    cursor: pointer;
+    transition:
+      letter-spacing 0.3s,
+      padding 0.3s;
+    &--icon {
+      margin-left: auto;
+      transition: transform 0.3s;
+    }
+    &:hover {
+      letter-spacing: 7px;
+      padding-left: $size-unit * 5;
+      .app-form__btn--icon {
+        transform: translateX($size-unit * 2);
+      }
+    }
+  }
+}

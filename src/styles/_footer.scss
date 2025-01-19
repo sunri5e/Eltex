@@ -1,0 +1,70 @@
+@use "_variables" as *;
+
+.app-footer {
+  padding: $size-unit * 32 0;
+  font-size: $fontSize-normal;
+  &__logo {
+    color: rgb(252, 252, 252);
+    font-family: Mplus 1p;
+    font-size: $fontSize-largest;
+    font-weight: $fontWeight-boldest;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-bottom: $size-unit * 6;
+  }
+  &__section {
+    &-title {
+      display: inline-block;
+      font-size: $fontSize-smaller;
+      font-weight: $fontWeight-bolder;
+      line-height: 1.58;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      border-bottom: 1px solid $color-primary;
+      padding-bottom: $size-unit * 2;
+      margin-bottom: $size-unit * 5.5;
+    }
+  }
+  &__nav {
+    li + li {
+      margin-top: $size-unit;
+    }
+    a {
+      color: $color-text;
+      font-size: $fontSize-smaller;
+      font-weight: $fontWeight-bold;
+      line-height: 1.58;
+      letter-spacing: 1px;
+      &:hover {
+        text-decoration: underline;
+      }
+      &[href^="tel:"],
+      &[href^="mailto:"] {
+        font-size: $fontSize-normal;
+        font-weight: $fontWeight-normal;
+        display: inline-flex;
+        align-items: center;
+        line-height: 1.5;
+        letter-spacing: 0;
+        vertical-align: bottom;
+      }
+    }
+    &--icon {
+      width: $size-unit * 8;
+    }
+    &--social {
+      ul {
+        display: flex;
+        li + li {
+          margin-left: $size-unit * 10.5;
+        }
+      }
+    }
+  }
+  &__copy {
+    font-size: $fontSize-smaller;
+    font-weight: $fontWeight-normal;
+    line-height: 1.54;
+    letter-spacing: 0;
+  }
+}

@@ -1,0 +1,51 @@
+@use "_variables" as *;
+
+.app-l-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 $size-unit * 4;
+  margin: 0 auto;
+}
+
+.app-l-grid {
+  display: grid;
+  grid-template-columns: repeat($gridCount, minmax(0, 1fr));
+  grid-gap: $size-unit * 4;
+  & > * {
+    grid-column: span $gridCount;
+  }
+  &__align-center {
+    align-items: center;
+  }
+}
+
+@for $i from 1 through $gridCount {
+  .app-l-grid--span-#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+.app-l-flex-row {
+  display: flex;
+  &__space-between {
+    justify-content: space-between;
+  }
+  &__justify-center {
+    justify-content: center;
+  }
+  &__align-baseline {
+    align-items: baseline;
+  }
+  &__align-center {
+    align-items: center;
+  }
+  &__align-top {
+    align-items: flex-start;
+  }
+  &__align-bottom {
+    align-items: flex-end;
+  }
+  &__wrap {
+    flex-wrap: wrap;
+  }
+}

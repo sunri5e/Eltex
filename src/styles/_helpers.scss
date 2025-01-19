@@ -1,0 +1,44 @@
+@use "_variables" as *;
+@use "_mixins" as *;
+
+// *** Colors ***
+.app-h-color-primary {
+  color: $color-primary;
+}
+.app-h-color-secondary {
+  color: $color-text-secondary;
+}
+.app-h-color-dark-secondary {
+  color: $color-text-dark-secondary;
+}
+
+// *** Backgrounds ***
+.app-h-bg-white {
+  background: $color-bg-white;
+}
+.app-h-bg-main {
+  background: $color-bg;
+}
+
+// *** Margins ***
+@include generateIndentation("app-h-mt", $indentationSteps, margin-top);
+@include generateIndentation("app-h-mr", $indentationSteps, margin-right);
+@include generateIndentation("app-h-mb", $indentationSteps, margin-bottom);
+@include generateIndentation("app-h-ml", $indentationSteps, margin-left);
+@include generateIndentation("app-h-mh", $indentationSteps, margin-left margin-right);
+
+// *** Alignment ***
+.app-h-align-center {
+  text-align: center;
+}
+
+// *** Utils ***
+.app-h-position-relative {
+  position: relative;
+}
+.app-h-position-absolute {
+  position: absolute;
+}
+.app-h-position-fixed {
+  position: fixed;
+}

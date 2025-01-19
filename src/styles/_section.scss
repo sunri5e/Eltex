@@ -1,0 +1,56 @@
+@use "_variables" as *;
+@use "sass:color";
+
+.app-section {
+  padding: $size-unit * 32 0;
+  &__badge {
+    font-size: $fontSize-small;
+    font-weight: $fontWeight-bolder;
+    line-height: 1.5;
+    letter-spacing: $size-unit;
+    text-transform: uppercase;
+    margin-bottom: $size-unit * 4.5;
+  }
+  &__content {
+    padding-right: $size-unit * 28;
+  }
+  &__cta {
+    display: inline-block;
+    padding: $size-unit * 3 $size-unit * 11;
+    border-radius: $size-unit * 5.5;
+    height: $size-unit * 11;
+    font-size: $fontSize-small;
+    font-weight: $fontWeight-medium;
+    line-height: 1.5;
+    letter-spacing: calc($size-unit / 2);
+    text-transform: uppercase;
+    transition: background 0.2s;
+    background: $color-primary;
+    color: $color-text;
+    &:hover {
+      cursor: pointer;
+      background: color.adjust($color-primary, $lightness: -5%);
+      color: $color-bg-white;
+    }
+  }
+  &--partial-bg {
+    position: relative;
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc((100vw - 1200px) / 2 + 854px);
+      height: 100%;
+      background-image: url("./images/section-bg.jpeg");
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+}

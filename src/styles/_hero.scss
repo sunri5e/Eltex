@@ -1,0 +1,81 @@
+@use "_variables" as *;
+
+.app-hero {
+  padding: $size-unit * 63 0 $size-unit * 32;
+  background-image: url("./images/hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &__cta {
+    margin-top: $size-unit * 4;
+    box-sizing: border-box;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    display: inline-flex;
+    align-items: center;
+    color: $color-text;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: $size-unit * 7.5 $size-unit * 10 $size-unit * 7.5 0;
+    position: relative;
+    &::after,
+    &::before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+
+      right: 0;
+      width: 100vw;
+
+      transition: width 0.3s;
+      z-index: 0;
+    }
+    &::after {
+      height: 100%;
+      top: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    &::before {
+      top: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.07);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &--icon {
+      margin-left: $size-unit * 12.5;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  &__scroll-btn {
+    padding: $size-unit * 2.5 0;
+    position: absolute;
+    right: -#{$size-unit * 2.5};
+    top: 0;
+    display: flex;
+    align-items: center;
+    color: $color-text;
+    font-size: $fontSize-smaller;
+    font-weight: $fontWeight-bolder;
+    line-height: 1.6;
+    letter-spacing: $size-unit * 1.5;
+    text-transform: uppercase;
+    transform: rotate(90deg) translate(100%, 0);
+    transform-origin: 100% 0;
+    &--icon {
+      margin-left: $size-unit * 12.5;
+      transition: margin 0.3s;
+    }
+    &:hover {
+      .app-hero__scroll-btn--icon {
+        margin-left: $size-unit * 15;
+      }
+    }
+  }
+}

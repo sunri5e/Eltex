@@ -1,0 +1,17 @@
+@use "_variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;800;900&family=Noticia+Text:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-bg;
+  color: $color-text;
+  font-size: $fontSize-large;
+  font-weight: $fontWeight-normal;
+  font-family: $font-sansSerif;
+  line-height: 1.5;
+}
