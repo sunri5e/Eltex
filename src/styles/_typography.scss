@@ -3,22 +3,31 @@
 h1,
 .h1 {
   font-weight: $fontWeight-boldest;
-  font-size: $size-unit * 25;
+  font-size: $size-unit * 10;
   line-height: 1.47;
   margin-bottom: $size-unit * 3;
+  @media (min-width: #{$screen-sm + 1}) {
+    font-size: $size-unit * 25;
+  }
 }
 
 h2,
 .h2 {
-  font-size: $size-unit * 11.25;
+  font-size: $size-unit * 8.5;
   font-weight: $fontWeight-medium;
   line-height: 1.48;
   margin-bottom: $size-unit * 4.5;
   margin-top: 0;
+  @media (min-width: #{$screen-sm + 1}) {
+    font-size: $size-unit * 11.25;
+  }
 }
 
 p {
-  margin: 0 0 $size-unit * 7;
+  margin: 0 0 $size-unit * 4;
+  @media (min-width: #{$screen-sm + 1}) {
+    margin: 0 0 $size-unit * 7;
+  }
 }
 
 a {

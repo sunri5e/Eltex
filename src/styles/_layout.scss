@@ -3,8 +3,11 @@
 .app-l-container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 $size-unit * 4;
   margin: 0 auto;
+  padding: 0 $size-unit * 8;
+  @media (min-width: #{$screen-sm + 1}) {
+    padding: 0 $size-unit * 4;
+  }
 }
 
 .app-l-grid {
@@ -22,6 +25,14 @@
 @for $i from 1 through $gridCount {
   .app-l-grid--span-#{$i} {
     grid-column: span #{$i};
+  }
+}
+
+@media (min-width: #{$screen-sm + 1}) {
+  @for $i from 1 through $gridCount {
+    .app-l-grid--span-#{$i}-md {
+      grid-column: span #{$i};
+    }
   }
 }
 
@@ -47,5 +58,58 @@
   }
   &__wrap {
     flex-wrap: wrap;
+  }
+}
+
+@media (min-width: #{$screen-sm + 1}) {
+  .app-l:md-flex-row {
+    display: flex;
+    &__space-between {
+      justify-content: space-between;
+    }
+    &__justify-center {
+      justify-content: center;
+    }
+    &__align-baseline {
+      align-items: baseline;
+    }
+    &__align-center {
+      align-items: center;
+    }
+    &__align-top {
+      align-items: flex-start;
+    }
+    &__align-bottom {
+      align-items: flex-end;
+    }
+    &__wrap {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.app-l-flex-column {
+  display: flex;
+  flex-direction: column;
+  &__space-between {
+    justify-content: space-between;
+  }
+  &__justify-center {
+    justify-content: center;
+  }
+  &__align-center {
+    align-items: center;
+  }
+  &__align-left {
+    align-items: flex-start;
+  }
+  &__align-right {
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: #{$screen-sm + 1}) {
+  .app-l:md-flex-column {
+    display: flex;
   }
 }

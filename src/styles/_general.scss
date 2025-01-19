@@ -10,8 +10,11 @@
 body {
   background: $color-bg;
   color: $color-text;
-  font-size: $fontSize-large;
   font-weight: $fontWeight-normal;
   font-family: $font-sansSerif;
   line-height: 1.5;
+  font-size: $fontSize-normal;
+  @media (min-width: #{$screen-sm + 1}) {
+    font-size: $fontSize-large;
+  }
 }

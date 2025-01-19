@@ -1,7 +1,11 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Eltex - Test landing</title>
   </head>
   <body>
@@ -10,8 +14,8 @@
         <div class="app-l-container">
           <div class="app-l-flex-row app-l-flex-row__align-center">
             <div class="app-header__logo app-h-mr-a">Studio</div>
-            <nav class="app-header__nav app-h-mr-23">
-              <ul class="app-l-flex-row">
+            <nav class="app-header__nav" id="mainNav">
+              <ul>
                 <li>
                   <a class="app-header__nav-item app-header__nav-item--active" href="#">Home</a>
                 </li>
@@ -24,7 +28,9 @@
               <img src="./images/phone.svg" alt="Phone icon" />
               (01) 666 - 693 - 456</a
             >
-            <button class="app-header__burger-btn app-h-ml-32"><i></i></button>
+            <button class="app-header__burger-btn" aria-label="Menu button" onclick="openMenu()">
+              <i></i>
+            </button>
           </div>
         </div>
       </header>
@@ -57,7 +63,7 @@
     <section class="app-section app-h-bg-white app-h-color-secondary">
       <div class="app-l-container">
         <div class="app-l-grid app-l-grid__align-center">
-          <div class="app-section__content app-l-grid--span-6">
+          <div class="app-section__content app-l-grid--span-6-md">
             <p class="app-section__badge app-h-color-primary">Intro</p>
             <h2 class="app-section__title app-h-color-dark-secondary">Our future</h2>
             <p class="app-h-color-dark-secondary">
@@ -71,11 +77,11 @@
               on a hillside, the sable cloud beneath was dished out, and the car seemed to float in
               the middle of an immense dark sphere, whose upper half was strewn with silver.
             </p>
-            <a href="#" class="app-section__cta app-h-mt-15">Learn more</a>
+            <a href="#" class="app-section__cta">Learn more</a>
           </div>
-          <div class="app-l-grid--span-6">
+          <div class="app-l-grid--span-6-md">
             <div class="app-quote">
-              <div class="app-quote__content app-h-bg-main">
+              <div class="app-quote__content">
                 <img src="./images/quote.svg" alt="Quote open" class="app-quote__top" />
                 <p class="app-quote__text">
                   Commodo sed egestas egestas fringilla phasellus faucibus.
@@ -92,9 +98,9 @@
       <div class="app-l-container">
         <p class="app-section__badge app-h-color-primary">Benefits</p>
         <div class="app-l-grid">
-          <div class="app-section__content app-l-grid--span-6">
+          <div class="app-section__content app-l-grid--span-6-md">
             <h2 class="app-section__title">Shaping the future</h2>
-            <p class="app-h-mb-18">
+            <p class="app-h-mb-9 app-h:md-mb-18">
               <b
                 >Eget nunc scelerisque viverra mauris in aliquam. Dignissim sodales ut eu sem
                 integer vitae. Libero nunc consequat interdum varius.</b
@@ -107,9 +113,9 @@
               ornare quam viverra.
             </p>
             <p>Posuere ac ut consequat semper viverra.</p>
-            <a href="#" class="app-section__cta app-h-mt-15">Learn more</a>
+            <a href="#" class="app-section__cta">Learn more</a>
           </div>
-          <div class="app-l-grid--span-6">
+          <div class="app-l-grid--span-6-md">
             <div class="app-slider app-h-mt-5">
               <div class="app-slider__item">
                 <img class="app-slider__img" src="./images/apps.jpeg" alt="Intro image" />
@@ -122,14 +128,14 @@
                     >3</span
                   >
                 </div>
-                <button class="app-slider__prev">
+                <button class="app-slider__prev" aria-label="Previous slide">
                   <img
                     src="./images/slider-control.svg"
                     alt="Slider previous"
                     class="app-slider__control-icon"
                   />
                 </button>
-                <button class="app-slider__next">
+                <button class="app-slider__next" aria-label="Next slide">
                   <img
                     src="./images/slider-control.svg"
                     alt="Slider next"
@@ -150,8 +156,8 @@
         </div>
         <form action="" class="app-form">
           <input class="app-form__input" type="text" placeholder="Enter email" />
-          <button class="app-form__btn">
-            Subscribe
+          <button class="app-form__btn" aria-label="Subscribe button">
+            <span class="app-form__btn--text">Subscribe</span>
             <img class="app-form__btn--icon" src="./images/send-arrow.svg" alt="Subscribe icon" />
           </button>
         </form>
@@ -159,8 +165,8 @@
     </section>
     <footer class="app-footer">
       <div class="app-l-container">
-        <div class="app-l-flex-row">
-          <div class="app-h-mr-32">
+        <div class="app-l:md-flex-row">
+          <div class="app-l-flex-row app-l:md-flex-column app-h:md-mr-32">
             <div class="app-footer__logo">Lopper</div>
             <p>
               Eu augue ut lectus <br />
@@ -170,7 +176,7 @@
           <div class="">
             <div class="app-l-flex-row">
               <div class="app-footer__section app-h-mr-9">
-                <h5 class="app-footer__section-title">Menu</h5>
+                <h3 class="app-footer__section-title">Menu</h3>
                 <nav class="app-footer__nav">
                   <ul>
                     <li><a href="#">Home</a></li>
@@ -183,7 +189,7 @@
                 </nav>
               </div>
               <div class="app-footer__section app-h-mr-23">
-                <h5 class="app-footer__section-title">Services</h5>
+                <h3 class="app-footer__section-title">Services</h3>
                 <nav class="app-footer__nav">
                   <ul>
                     <li><a href="#">Lorem</a></li>
@@ -194,7 +200,7 @@
                 </nav>
               </div>
               <div class="app-footer__section app-h-mr-32">
-                <h5 class="app-footer__section-title">Contact us</h5>
+                <h3 class="app-footer__section-title">Contact us</h3>
                 <nav class="app-footer__nav">
                   <ul>
                     <li>
@@ -217,7 +223,7 @@
                 </nav>
               </div>
               <div class="app-footer__section">
-                <h5 class="app-footer__section-title">Follow us</h5>
+                <h3 class="app-footer__section-title">Follow us</h3>
                 <nav class="app-footer__nav app-footer__nav--social">
                   <ul>
                     <li>
@@ -276,5 +282,11 @@
         </div>
       </div>
     </footer>
+    <script>
+      function openMenu() {
+        var nav = document.getElementById("mainNav");
+        nav.classList.toggle("app-header__nav--is-visible");
+      }
+    </script>
   </body>
 </html>

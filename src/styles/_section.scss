@@ -2,17 +2,26 @@
 @use "sass:color";
 
 .app-section {
-  padding: $size-unit * 32 0;
+  padding: $size-unit * 17 0;
+  @media (min-width: #{$screen-sm + 1}) {
+    padding: $size-unit * 32 0;
+  }
   &__badge {
-    font-size: $fontSize-small;
     font-weight: $fontWeight-bolder;
     line-height: 1.5;
     letter-spacing: $size-unit;
     text-transform: uppercase;
-    margin-bottom: $size-unit * 4.5;
+    font-size: $fontSize-smaller;
+    margin-bottom: $size-unit * 2.5;
+    @media (min-width: #{$screen-sm + 1}) {
+      font-size: $fontSize-small;
+      margin-bottom: $size-unit * 4.5;
+    }
   }
   &__content {
-    padding-right: $size-unit * 28;
+    @media (min-width: #{$screen-sm + 1}) {
+      padding-right: $size-unit * 28;
+    }
   }
   &__cta {
     display: inline-block;
@@ -27,6 +36,10 @@
     transition: background 0.2s;
     background: $color-primary;
     color: $color-text;
+    margin-top: $size-unit * 10;
+    @media (min-width: #{$screen-sm + 1}) {
+      margin-top: $size-unit * 15;
+    }
     &:hover {
       cursor: pointer;
       background: color.adjust($color-primary, $lightness: -5%);

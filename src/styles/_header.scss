@@ -3,8 +3,11 @@
 .app-header {
   position: absolute;
   width: 100%;
-  top: $size-unit * 20;
   z-index: 1;
+  top: $size-unit * 4;
+  @media (min-width: #{$screen-sm + 1}) {
+    top: $size-unit * 20;
+  }
   &__logo {
     color: rgb(252, 252, 252);
     font-family: Mplus 1p;
@@ -14,9 +17,45 @@
     letter-spacing: 2px;
   }
   &__nav {
-    ul > *:not(:last-child) {
-      margin-right: $size-unit * 14;
+    position: absolute;
+    right: $size-unit * 8;
+    top: $size-unit * 10;
+    text-align: right;
+    height: 0;
+    @media (min-width: #{$screen-sm + 1}) {
+      margin-right: $size-unit * 23;
+      position: static;
+      text-align: left;
     }
+    &.app-header__nav--is-visible {
+      height: auto;
+      @media (min-width: #{$screen-sm + 1}) {
+        display: flex;
+      }
+      ul > * {
+        width: 100%;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: #{$screen-sm + 1}) {
+        flex-direction: row;
+      }
+      & > * {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s;
+        &:not(:last-child) {
+          margin-bottom: $size-unit * 2;
+          @media (min-width: #{$screen-sm + 1}) {
+            margin-right: $size-unit * 14;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
     &-item {
       display: inline-block;
       position: relative;
@@ -56,6 +95,10 @@
     display: inline-flex;
     align-items: center;
     vertical-align: bottom;
+    display: none;
+    @media (min-width: #{$screen-sm + 1}) {
+      display: block;
+    }
     img {
       margin-right: $size-unit * 4.5;
     }
@@ -67,6 +110,10 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    margin-left: auto;
+    @media (min-width: #{$screen-sm + 1}) {
+      margin-left: $size-unit * 32;
+    }
     &::before,
     &::after {
       content: "";

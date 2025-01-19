@@ -1,11 +1,16 @@
 @use "_variables" as *;
 
 .app-hero {
-  padding: $size-unit * 63 0 $size-unit * 32;
+  padding: $size-unit * 26 0 $size-unit * 8;
   background-image: url("./images/hero.jpeg");
   background-size: cover;
   background-position: center;
   position: relative;
+  @media (min-width: #{$screen-sm + 1}) {
+    padding: $size-unit * 63 0 $size-unit * 32;
+  }
+  @media (min-width: #{$screen-md + 1}) {
+  }
   &__cta {
     margin-top: $size-unit * 4;
     box-sizing: border-box;
@@ -58,7 +63,7 @@
     position: absolute;
     right: -#{$size-unit * 2.5};
     top: 0;
-    display: flex;
+    display: none;
     align-items: center;
     color: $color-text;
     font-size: $fontSize-smaller;
@@ -68,6 +73,9 @@
     text-transform: uppercase;
     transform: rotate(90deg) translate(100%, 0);
     transform-origin: 100% 0;
+    @media (min-width: #{$screen-sm + 1}) {
+      display: flex;
+    }
     &--icon {
       margin-left: $size-unit * 12.5;
       transition: margin 0.3s;

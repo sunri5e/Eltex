@@ -1,11 +1,13 @@
 @use "_variables" as *;
 
 .app-form {
-  width: $size-unit * 140;
   border-bottom: 3px solid rgb(244, 244, 237);
   display: flex;
   transition: border-color 0.3s;
   margin: $size-unit * 11 auto $size-unit * 3;
+  @media (min-width: #{$screen-sm + 1}) {
+    width: $size-unit * 140;
+  }
   &:focus-within {
     border-color: $color-primary;
   }
@@ -29,7 +31,7 @@
   &__btn {
     border: none;
     padding: $size-unit * 4 $size-unit * 7;
-    width: $size-unit * 56;
+
     background: linear-gradient(180deg, rgba(242, 242, 242, 0.5), rgba(255, 255, 255, 0) 100%);
     display: flex;
     color: $color-primary;
@@ -43,15 +45,26 @@
     transition:
       letter-spacing 0.3s,
       padding 0.3s;
+    @media (min-width: #{$screen-sm + 1}) {
+      width: $size-unit * 56;
+    }
     &--icon {
       margin-left: auto;
       transition: transform 0.3s;
     }
-    &:hover {
-      letter-spacing: 7px;
-      padding-left: $size-unit * 5;
-      .app-form__btn--icon {
-        transform: translateX($size-unit * 2);
+    &--text {
+      display: none;
+      @media (min-width: #{$screen-sm + 1}) {
+        display: inline;
+      }
+    }
+    @media (min-width: #{$screen-sm + 1}) {
+      &:hover {
+        letter-spacing: 7px;
+        padding-left: $size-unit * 5;
+        .app-form__btn--icon {
+          transform: translateX($size-unit * 2);
+        }
       }
     }
   }

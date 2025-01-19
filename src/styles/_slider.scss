@@ -1,11 +1,20 @@
 @use "_variables" as *;
 
 .app-slider {
+  margin: 0 -#{$size-unit * 8} -#{$size-unit * 13};
+  @media (min-width: #{$screen-sm + 1}) {
+    margin: 0;
+  }
   &__item {
-    display: flex;
+    @media (min-width: #{$screen-sm + 1}) {
+      display: flex;
+    }
   }
   &__img {
-    width: $size-unit * 115;
+    max-width: 100%;
+    @media (min-width: #{$screen-sm + 1}) {
+      width: $size-unit * 115;
+    }
   }
   &__text {
     color: $color-secondary;
@@ -14,23 +23,37 @@
     line-height: 1.58;
     letter-spacing: 6px;
     text-transform: uppercase;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    margin: 0;
-    margin-left: $size-unit * 7.5;
-    width: $size-unit * 17;
     flex-basis: $size-unit * 17;
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin: -#{$size-unit * 12} 0 0;
+    padding: $size-unit * 4 $size-unit * 6 $size-unit * 4 $size-unit * 8;
+    background: $color-text;
+    position: relative;
+    z-index: 1;
+    @media (min-width: #{$screen-sm + 1}) {
+      justify-content: center;
+      width: $size-unit * 17;
+      margin: 0 0 0 $size-unit * 7.5;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      position: static;
+    }
   }
   &__controls {
-    width: $size-unit * 115;
-    margin-top: $size-unit * 10;
     display: flex;
     justify-content: end;
     color: $color-secondary;
     align-items: center;
+    margin-top: -#{$size-unit * 10};
+    position: relative;
+    z-index: 2;
+    padding-right: $size-unit * 8;
+    @media (min-width: #{$screen-sm + 1}) {
+      width: $size-unit * 115;
+      margin-top: $size-unit * 10;
+      position: static;
+    }
   }
   &__prev,
   &__next {
