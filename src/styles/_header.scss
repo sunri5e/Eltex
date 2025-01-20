@@ -15,17 +15,24 @@
     font-weight: $fontWeight-boldest;
     line-height: 1.5;
     letter-spacing: 2px;
+    margin-right: $size-unit * 8;
+    @media (min-width: #{$screen-sm + 1}) {
+      margin-right: auto;
+    }
   }
   &__nav {
     position: absolute;
     right: $size-unit * 8;
     top: $size-unit * 10;
     text-align: right;
-    height: 0;
+    @media (max-width: #{$screen-sm}) {
+      height: 0;
+    }
     @media (min-width: #{$screen-sm + 1}) {
       margin-right: $size-unit * 23;
       position: static;
       text-align: left;
+      height: auto;
     }
     &.app-header__nav--is-visible {
       height: auto;
@@ -43,9 +50,11 @@
         flex-direction: row;
       }
       & > * {
-        width: 0;
-        overflow: hidden;
-        transition: width 0.3s;
+        @media (max-width: #{$screen-sm}) {
+          width: 0;
+          overflow: hidden;
+          transition: width 0.3s;
+        }
         &:not(:last-child) {
           margin-bottom: $size-unit * 2;
           @media (min-width: #{$screen-sm + 1}) {
@@ -96,8 +105,8 @@
     align-items: center;
     vertical-align: bottom;
     display: none;
-    @media (min-width: #{$screen-sm + 1}) {
-      display: block;
+    @media (min-width: #{$screen-md + 1}) {
+      display: flex;
     }
     img {
       margin-right: $size-unit * 4.5;
@@ -111,7 +120,7 @@
     border: none;
     cursor: pointer;
     margin-left: auto;
-    @media (min-width: #{$screen-sm + 1}) {
+    @media (min-width: #{$screen-md + 1}) {
       margin-left: $size-unit * 32;
     }
     &::before,

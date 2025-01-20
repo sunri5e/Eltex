@@ -20,6 +20,9 @@
   }
   &__content {
     @media (min-width: #{$screen-sm + 1}) {
+      padding-right: $size-unit * 18;
+    }
+    @media (min-width: #{$screen-md + 1}) {
       padding-right: $size-unit * 28;
     }
   }
@@ -57,13 +60,16 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: calc((100vw - 1200px) / 2 + 854px);
+      width: 100%;
       height: 100%;
       background-image: url("./images/section-bg.jpeg");
       background-size: cover;
       background-position: center;
       z-index: 0;
       pointer-events: none;
+      @media (min-width: #{$screen-sm + 1}) {
+        width: calc((100vw - 1200px) / 2 + 854px);
+      }
     }
   }
 }

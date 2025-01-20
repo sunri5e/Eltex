@@ -26,12 +26,26 @@
 @include generateIndentation("app-h-mb", $indentationSteps, margin-bottom);
 @include generateIndentation("app-h-ml", $indentationSteps, margin-left);
 @include generateIndentation("app-h-mh", $indentationSteps, margin-left margin-right);
+@media (max-width: #{$screen-sm}) {
+  @include generateIndentation("app-h_sm-mt", $indentationSteps, margin-top);
+  @include generateIndentation("app-h_sm-mr", $indentationSteps, margin-right);
+  @include generateIndentation("app-h_sm-mb", $indentationSteps, margin-bottom);
+  @include generateIndentation("app-h_sm-ml", $indentationSteps, margin-left);
+  @include generateIndentation("app-h_sm-mh", $indentationSteps, margin-left margin-right);
+}
 @media (min-width: #{$screen-sm + 1}) {
-  @include generateIndentation("app-h:md-mt", $indentationSteps, margin-top);
-  @include generateIndentation("app-h:md-mr", $indentationSteps, margin-right);
-  @include generateIndentation("app-h:md-mb", $indentationSteps, margin-bottom);
-  @include generateIndentation("app-h:md-ml", $indentationSteps, margin-left);
-  @include generateIndentation("app-h:md-mh", $indentationSteps, margin-left margin-right);
+  @include generateIndentation("app-h_md-mt", $indentationSteps, margin-top);
+  @include generateIndentation("app-h_md-mr", $indentationSteps, margin-right);
+  @include generateIndentation("app-h_md-mb", $indentationSteps, margin-bottom);
+  @include generateIndentation("app-h_md-ml", $indentationSteps, margin-left);
+  @include generateIndentation("app-h_md-mh", $indentationSteps, margin-left margin-right);
+}
+@media (min-width: #{$screen-md + 1}) {
+  @include generateIndentation("app-h_lg-mt", $indentationSteps, margin-top);
+  @include generateIndentation("app-h_lg-mr", $indentationSteps, margin-right);
+  @include generateIndentation("app-h_lg-mb", $indentationSteps, margin-bottom);
+  @include generateIndentation("app-h_lg-ml", $indentationSteps, margin-left);
+  @include generateIndentation("app-h_lg-mh", $indentationSteps, margin-left margin-right);
 }
 
 // *** Alignment ***
@@ -48,4 +62,11 @@
 }
 .app-h-position-fixed {
   position: fixed;
+}
+
+// *** Display ***
+@media (max-width: #{$screen-sm}) {
+  .app-h_sm-display-none {
+    display: none;
+  }
 }

@@ -5,9 +5,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 $size-unit * 8;
-  @media (min-width: #{$screen-sm + 1}) {
-    padding: 0 $size-unit * 4;
-  }
 }
 
 .app-l-grid {
@@ -28,9 +25,24 @@
   }
 }
 
+@media (max-width: #{$screen-sm}) {
+  @for $i from 1 through $gridCount {
+    .app-l-grid--span-#{$i}-sm {
+      grid-column: span #{$i};
+    }
+  }
+}
+
 @media (min-width: #{$screen-sm + 1}) {
   @for $i from 1 through $gridCount {
     .app-l-grid--span-#{$i}-md {
+      grid-column: span #{$i};
+    }
+  }
+}
+@media (min-width: #{$screen-md + 1}) {
+  @for $i from 1 through $gridCount {
+    .app-l-grid--span-#{$i}-lg {
       grid-column: span #{$i};
     }
   }
@@ -61,8 +73,35 @@
   }
 }
 
+@media (max-width: #{$screen-sm}) {
+  .app-l_sm-flex-row {
+    display: flex;
+    &__space-between {
+      justify-content: space-between;
+    }
+    &__justify-center {
+      justify-content: center;
+    }
+    &__align-baseline {
+      align-items: baseline;
+    }
+    &__align-center {
+      align-items: center;
+    }
+    &__align-top {
+      align-items: flex-start;
+    }
+    &__align-bottom {
+      align-items: flex-end;
+    }
+    &__wrap {
+      flex-wrap: wrap;
+    }
+  }
+}
+
 @media (min-width: #{$screen-sm + 1}) {
-  .app-l:md-flex-row {
+  .app-l_md-flex-row {
     display: flex;
     &__space-between {
       justify-content: space-between;
@@ -109,7 +148,8 @@
 }
 
 @media (min-width: #{$screen-sm + 1}) {
-  .app-l:md-flex-column {
+  .app-l_md-flex-column {
     display: flex;
+    flex-direction: column;
   }
 }

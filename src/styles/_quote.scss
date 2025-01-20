@@ -4,7 +4,7 @@
   position: relative;
   z-index: 1;
   line-height: 1;
-  margin: 0 -#{$size-unit * 8} -#{$size-unit * 17.5};
+  margin: $size-unit * 4 -#{$size-unit * 8} -#{$size-unit * 16.5};
   @media (min-width: #{$screen-sm + 1}) {
     width: $size-unit * 115;
     margin: 0 0 -#{$size-unit * 50};
@@ -18,14 +18,17 @@
     font-weight: $fontWeight-normal;
     line-height: 1.4;
     padding: $size-unit * 8 $size-unit * 12;
-    position: absolute;
-    bottom: 0;
-    background: rgb($color-bg, 0.3);
+    background: $color-bg;
     text-align: center;
     @media (min-width: #{$screen-sm + 1}) {
+      position: absolute;
+      bottom: 0;
+      background: rgba($color-bg, 0.3);
+    }
+    @media (min-width: #{$screen-md + 1}) {
+      background: $color-bg;
       text-align: left;
       padding: $size-unit * 38 $size-unit * 15 $size-unit * 22;
-      background: $color-bg;
       width: $size-unit * 95;
       left: 100%;
       bottom: auto;
@@ -50,7 +53,7 @@
   &__top,
   &__bottom {
     display: block;
-    @media (min-width: #{$screen-sm + 1}) {
+    @media (min-width: #{$screen-md + 1}) {
       margin: 0 45% 0 auto;
     }
   }
@@ -63,5 +66,9 @@
   &__picture {
     max-width: 100%;
     margin-top: $size-unit * 9;
+    display: none;
+    @media (min-width: #{$screen-sm + 1}) {
+      display: block;
+    }
   }
 }

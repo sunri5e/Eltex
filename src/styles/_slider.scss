@@ -6,13 +6,15 @@
     margin: 0;
   }
   &__item {
-    @media (min-width: #{$screen-sm + 1}) {
+    @media (min-width: #{$screen-md + 1}) {
       display: flex;
     }
   }
   &__img {
-    max-width: 100%;
+    width: 100%;
     @media (min-width: #{$screen-sm + 1}) {
+      width: auto;
+      max-width: 100%;
       width: $size-unit * 115;
     }
   }
@@ -31,7 +33,7 @@
     background: $color-text;
     position: relative;
     z-index: 1;
-    @media (min-width: #{$screen-sm + 1}) {
+    @media (min-width: #{$screen-md + 1}) {
       justify-content: center;
       width: $size-unit * 17;
       margin: 0 0 0 $size-unit * 7.5;
@@ -49,7 +51,7 @@
     position: relative;
     z-index: 2;
     padding-right: $size-unit * 8;
-    @media (min-width: #{$screen-sm + 1}) {
+    @media (min-width: #{$screen-md + 1}) {
       width: $size-unit * 115;
       margin-top: $size-unit * 10;
       position: static;
